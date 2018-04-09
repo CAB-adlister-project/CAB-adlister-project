@@ -1,22 +1,52 @@
-USE adlister_db;
+USE omelete_db;
 
-DROP TABLE IF EXISTS ads;
-DROP TABLE IF EXISTS users;
 
-CREATE TABLE users (
+
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Rest_Pro;
+DROP TABLE IF EXISTS Jobs;
+DROP TABLE IF EXISTS Categories;
+DROP TABLE IF EXISTS Rest_Cat;
+
+CREATE TABLE Users(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(240) NOT NULL,
     email VARCHAR(240) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(240) NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE ads (
+CREATE TABLE Rest_Pro (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
+    name VARCHAR(240) NOT NULL,
+    logo VARCHAR(240) NOT NULL,
+    location VARCHAR(240) NOT NULL,
+    phone_number VARCHAR(255) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    PRIMARY KEY (id)
+);
+#
+CREATE TABLE Jobs (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    rest_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
     description TEXT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
+    FOREIGN KEY (rest_id) REFERENCES Rest_Pro(id)
+);
+#
+CREATE TABLE Categories(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    type VARCHAR(200),
+    PRIMARY KEY (id)
+);
+#
+CREATE TABLE Rest_Cat(
+    rest_id INT UNSIGNED NOT NULL,
+    cat_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY(rest_id) REFERENCES Rest_Pro(id),
+    FOREIGN KEY (cat_id) REFERENCES Categories(id)
+
 );
