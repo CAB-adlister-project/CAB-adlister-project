@@ -1,4 +1,4 @@
-USE adlister_db;
+USE omelete_db;
 
 DROP TABLE IF EXISTS jobs;
 DROP TABLE IF EXISTS users;
