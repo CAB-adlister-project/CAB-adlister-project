@@ -1,7 +1,5 @@
 USE omelete_db;
 
-
-
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Rest_Pro;
 DROP TABLE IF EXISTS Jobs;
@@ -27,7 +25,7 @@ CREATE TABLE Rest_Pro (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     PRIMARY KEY (id)
 );
-#
+
 CREATE TABLE Jobs (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     rest_id INT UNSIGNED NOT NULL,
