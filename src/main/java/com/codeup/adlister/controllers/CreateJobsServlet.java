@@ -1,7 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Job;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -11,26 +11,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateJobsServlet", urlPatterns = "/ads/create")
+@WebServlet(name = "controllers.CreateJobsServlet", urlPatterns = "/Jobs/create")
 public class CreateJobsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+        request.getRequestDispatcher("/WEB-INF/Jobs/create.jsp")
                 .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
-        Ad ad = new Ad(
+        Job job = new Job(
                 user.getId(),
                 request.getParameter("title"),
                 request.getParameter("description")
         );
-        DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/ads");
+        DaoFactory.getJobsDao().insert(job);
+        response.sendRedirect("/Jobs");
     }
 }
 
