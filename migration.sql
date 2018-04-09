@@ -1,12 +1,10 @@
-USE adlister_db;
+USE omelete_db;
 
 DROP TABLE IF EXISTS jobs;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS RestProfile;
 DROP TABLE IF EXISTS EmpProfile;
 DROP TABLE IF EXISTS WorkHistory;
-
-
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
