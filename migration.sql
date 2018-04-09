@@ -1,54 +1,52 @@
 USE omelete_db;
 
-DROP TABLE IF EXISTS jobs;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS RestProfile;
-DROP TABLE IF EXISTS EmpProfile;
-DROP TABLE IF EXISTS WorkHistory;
 
-CREATE TABLE users (
+
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Rest_Pro;
+DROP TABLE IF EXISTS Jobs;
+DROP TABLE IF EXISTS Categories;
+DROP TABLE IF EXISTS Rest_Cat;
+
+CREATE TABLE Users(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(240) NOT NULL,
     email VARCHAR(240) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(240) NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE RestProfile(
+CREATE TABLE Rest_Pro (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
     name VARCHAR(240) NOT NULL,
     logo VARCHAR(240) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    location VARCHAR(240) NOT NULL,
+    phone_number VARCHAR(255) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    PRIMARY KEY (id)
 );
-
-CREATE TABLE EmpProfile(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT UNSIGNED NOT NULL,
-    name VARCHAR(240),
-    photo VARCHAR(240),
-    video VARCHAR(240),
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-CREATE TABLE jobs (
+#
+CREATE TABLE Jobs (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     rest_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
     description TEXT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (rest_id) REFERENCES RestProfile(id)
+    FOREIGN KEY (rest_id) REFERENCES Rest_Pro(id)
 );
-
-CREATE TABLE WorkHistory(
+#
+CREATE TABLE Categories(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    emp_prof_id INT UNSIGNED NOT NULL,
-    name VARCHAR(240),
-    position VARCHAR(240),
-    hire_date DATE,
-    to_date DATE,
-    PRIMARY KEY (id),
-    FOREIGN KEY (emp_prof_id) REFERENCES EmpProfile(id)
+    type VARCHAR(200),
+    PRIMARY KEY (id)
+);
+#
+CREATE TABLE Rest_Cat(
+    rest_id INT UNSIGNED NOT NULL,
+    cat_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY(rest_id) REFERENCES Rest_Pro(id),
+    FOREIGN KEY (cat_id) REFERENCES Categories(id)
+
 );
