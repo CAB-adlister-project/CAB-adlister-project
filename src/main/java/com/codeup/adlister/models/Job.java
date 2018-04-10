@@ -13,7 +13,7 @@ public class Job {
         this.description = description;
     }
 
-    public Job(long userId, String title, String description) {
+    public Job(long userId, String rest_name, String title, String description) {
         this.userId = userId;
         this.title = title;
         this.description = description;
