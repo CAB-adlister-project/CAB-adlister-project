@@ -13,7 +13,7 @@
         <h1>Welcome to Omelete!</h1>
             <h3>About Company</h3>
                 <h4>The most common problem in the restaurant industry is the difficulty of finding valued employees. Allow Omelete to assist. Post your job listing here and have it been seen by thousands of users. </h4>
-        <form action="/Jobs/create" method="post">
+        <form action="/jobs/post" method="post">
             <input type="submit" class="btn btn-primary btn-block" value="Post Job">
         </form>
 

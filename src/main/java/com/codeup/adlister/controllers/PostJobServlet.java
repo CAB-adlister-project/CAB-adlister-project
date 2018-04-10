@@ -14,10 +14,10 @@ import java.io.IOException;
 @WebServlet(name = "controllers.PostJobsServlet", urlPatterns = "/jobs/post")
 public class PostJobServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        if (request.getSession().getAttribute("user") == null) {
-//            response.sendRedirect("/login");
-//            return;
-//        }
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
         request.getRequestDispatcher("/WEB-INF/Jobs/create.jsp")
                 .forward(request, response);
     }
