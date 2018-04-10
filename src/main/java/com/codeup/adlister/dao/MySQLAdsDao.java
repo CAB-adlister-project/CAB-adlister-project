@@ -58,7 +58,7 @@ public class MySQLAdsDao implements Jobs {
     private Job extractAd(ResultSet rs) throws SQLException {
         return new Job(
             rs.getLong("id"),
-            rs.getLong("user_id"),
+            rs.getLong("rest_id"),
             rs.getString("title"),
             rs.getString("description")
         );
