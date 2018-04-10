@@ -9,7 +9,7 @@ public class DaoFactory {
 
     public static Jobs getJobsDao() {
         if (jobsDao == null) {
-            jobsDao = new MySQLAdsDao(config);
+            jobsDao = new MySQLJobsDao(config);
         }
         return jobsDao;
     }

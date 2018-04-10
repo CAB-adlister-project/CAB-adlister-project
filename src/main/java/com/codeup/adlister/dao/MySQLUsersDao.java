@@ -38,12 +38,13 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+        String query = "INSERT INTO users(username, email, rest_name, password) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
-            stmt.setString(3, user.getPassword());
+            stmt.setString(3,user.getRest_name());
+            stmt.setString(4, user.getPassword());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -54,13 +55,14 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
+        if (!rs.next()) {
             return null;
         }
         return new User(
             rs.getLong("id"),
             rs.getString("username"),
             rs.getString("email"),
+            rs.getString("rest_name"),
             rs.getString("password")
         );
     }

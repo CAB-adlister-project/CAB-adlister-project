@@ -8,5 +8,5 @@ public interface Jobs {
     // get a list of all the ads
     List<Job> all();
     // insert a new job and return the new job's id
-    Long insert(Job job);
+    int insert(Job job);
 }
