@@ -15,14 +15,9 @@ public class Job {
         this.description = description;
     }
 
-<<<<<<< HEAD
-    public Job(long userId, String rest_name, String title, String description) {
-        this.userId = userId;
-=======
     public Job(int user_id, String rest_name, String title, String description) {
         this.user_id = user_id;
         this.rest_name = rest_name;
->>>>>>> 81b1c0c2edb7447620a9dedfb59b1240a02a35cd
         this.title = title;
         this.description = description;
     }
