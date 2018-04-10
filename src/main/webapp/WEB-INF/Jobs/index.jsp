@@ -15,6 +15,7 @@
     <c:forEach var="job" items="${jobs}">
         <div class="col-md-6">
             <h2>${job.title}</h2>
+            <h3>${job.rest_name}</h3>
             <p>${job.description}</p>
         </div>
     </c:forEach>
