@@ -7,7 +7,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
+    <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container">
         <h1>Welcome ${sessionScope.user.username} to Omelete!</h1>
             <h3>Here are a list of all your job listings.</h3>
