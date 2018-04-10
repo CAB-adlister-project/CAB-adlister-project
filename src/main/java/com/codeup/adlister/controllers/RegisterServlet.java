@@ -42,6 +42,7 @@ public class RegisterServlet extends HttpServlet {
             session.removeAttribute("email_error");
             session.removeAttribute("username_error");
             session.removeAttribute("password_mismatch");
+            session.removeAttribute("rest_name_error");
             session.setAttribute("password_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"password\" error!</h3>");
             response.sendRedirect("/register");
         } else if (!password.equals(passwordConfirmation)) {
@@ -49,6 +50,7 @@ public class RegisterServlet extends HttpServlet {
             session.removeAttribute("email_error");
             session.removeAttribute("username_error");
             session.removeAttribute("password_mismatch");
+            session.removeAttribute("rest_name_error");
             session.setAttribute("password_mismatch", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"passwords\" do not match!</h3>");
             response.sendRedirect("/register");
         } else if (email == null || email.trim() == "") {
@@ -56,6 +58,7 @@ public class RegisterServlet extends HttpServlet {
             session.removeAttribute("email_error");
             session.removeAttribute("username_error");
             session.removeAttribute("password_mismatch");
+            session.removeAttribute("rest_name_error");
             session.setAttribute("email_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"email\" error!</h3>");
             response.sendRedirect("/register");
         } else if (username == null || username.trim() == "") {
@@ -63,7 +66,16 @@ public class RegisterServlet extends HttpServlet {
             session.removeAttribute("email_error");
             session.removeAttribute("username_error");
             session.removeAttribute("password_mismatch");
+            session.removeAttribute("rest_name_error");
             session.setAttribute("username_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"username\" error!</h3>");
+            response.sendRedirect("/register");
+        } else if (rest_name == null || rest_name.trim() == "") {
+            session.removeAttribute("password_error");
+            session.removeAttribute("email_error");
+            session.removeAttribute("username_error");
+            session.removeAttribute("password_mismatch");
+            session.removeAttribute("rest_name_error");
+            session.setAttribute("rest_name_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry, error! \"You must enter a restaurant name\"</h3>");
             response.sendRedirect("/register");
         } else {
             session.removeAttribute("password_error");
@@ -87,7 +99,7 @@ public class RegisterServlet extends HttpServlet {
             }
 
             // create and save a new user
-            User user = new User(username, email, password);
+            User user = new User(username, email, password, rest_name);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }

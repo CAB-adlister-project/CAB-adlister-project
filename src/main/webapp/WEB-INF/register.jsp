@@ -36,6 +36,7 @@
             ${email_error}
             ${username_error}
             ${password_mismatch}
+            ${rest_name_error}
 
         </form>
     </div>
