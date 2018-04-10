@@ -99,7 +99,7 @@ public class RegisterServlet extends HttpServlet {
             }
 
             // create and save a new user
-            User user = new User(username, email, password, rest_name);
+            User user = new User(username, email, rest_name, password);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }
