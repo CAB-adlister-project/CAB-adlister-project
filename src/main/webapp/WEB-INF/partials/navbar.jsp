@@ -20,8 +20,6 @@
                 <li><a href="/register">Sign Up</a></li>
             </c:if>
 
-
-
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
