@@ -31,6 +31,12 @@
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
             <input type="submit" class="btn btn-primary btn-block">
+
+            ${password_error}
+            ${email_error}
+            ${username_error}
+            ${password_mismatch}
+
         </form>
     </div>
 </body>
