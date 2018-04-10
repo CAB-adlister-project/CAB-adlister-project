@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateJobsServlet", urlPatterns = "/Jobs/create")
-public class CreateJobsServlet extends HttpServlet {
+@WebServlet(name = "controllers.PostJobsServlet", urlPatterns = "/jobs/post")
+public class PostJobServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
+//        if (request.getSession().getAttribute("user") == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
         request.getRequestDispatcher("/WEB-INF/Jobs/create.jsp")
                 .forward(request, response);
     }
@@ -25,12 +25,13 @@ public class CreateJobsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         Job job = new Job(
-                user.getId(),
+                (int) user.getId(),
+                request.getParameter("rest_name"),
                 request.getParameter("title"),
                 request.getParameter("description")
         );
         DaoFactory.getJobsDao().insert(job);
-        response.sendRedirect("/Jobs");
+        response.sendRedirect("/jobs");
     }
-}
 
+}
