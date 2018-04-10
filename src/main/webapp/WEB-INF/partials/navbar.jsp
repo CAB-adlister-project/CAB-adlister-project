@@ -4,13 +4,14 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/jobs">Omelete!!</a>
+            <a class="navbar-brand" href="/jobs"><img src="/webapp/CSS/img/omeleteLOGO.png" alt="logo"></a>
         </div>
         <ul class="nav navbar-nav navbar-right">
 
 
             <c:if test="${sessionScope.user != null}">
                 <li><a href="/profile">Profile</a></li>
+                <li><a href="/jobs/post">Post Jobs</a></li>
                 <li><a href="/logout">Logout</a></li>
             </c:if>
 
@@ -18,6 +19,7 @@
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Sign Up</a></li>
             </c:if>
+
 
 
         </ul>

@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
 
-img {
+.logo {
     position: relative;
     width: 30%;
     margin-left: 35%
 }
+
 
 h1, h3, h4 {
     font-family: "PT Mono";
