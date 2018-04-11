@@ -28,11 +28,11 @@ public abstract class ListJobsDao implements Jobs {
     }
     @Override
     public List<Job> search(String searchQuery){return null;}
-
-    @Override
-    public List<Job> userAll(long userId) {
-        return null;
-    }
+//
+//    @Override
+//    public List<Job> userAll(long userId) {
+//        return null;
+//    }
 
     @Override
     public void userDelete(int id){}
