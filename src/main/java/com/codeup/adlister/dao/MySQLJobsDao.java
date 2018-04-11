@@ -37,6 +37,7 @@ public class MySQLJobsDao implements Jobs {
         }
     }
 
+
     @Override
     public int insert(Job job) {
         try {
@@ -65,10 +66,6 @@ public class MySQLJobsDao implements Jobs {
 //
 //    }
 
-    @Override
-    public Job singleJob(int adId) {
-        return null;
-    }
 //
 //    @Override
 //    public Object getCategories() {
@@ -89,7 +86,7 @@ public class MySQLJobsDao implements Jobs {
     private Job extractJob(ResultSet rs) throws SQLException {
         return new Job(
                 rs.getInt("j.id"),
-                rs.getInt("u.id"),
+                rs.getInt("j.user_id"),
                 rs.getString("u.rest_name"),
                 rs.getString("j.title"),
                 rs.getString("j.description")
@@ -131,12 +128,12 @@ public class MySQLJobsDao implements Jobs {
         }
     }
 
-
-    public List<Job> userAll(long userId) {
+@Override
+    public List<Job> FindJobsByUserID(int userId) {
         // used to display user ads on user profile
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM jobs WHERE user_id = ?");
+            stmt = connection.prepareStatement("SELECT * FROM Jobs j JOIN Users u ON u.id = j.user_id WHERE u.id = ?");
             stmt.setLong(1, userId);
             ResultSet rs = stmt.executeQuery();
             return createJobsFromResults(rs);
@@ -144,6 +141,7 @@ public class MySQLJobsDao implements Jobs {
             throw new RuntimeException("Error retrieving your ads");
         }
     }
+
     @Override
     public HashMap<Integer, String> getCategories(){
         PreparedStatement stmt = null;
@@ -191,24 +189,19 @@ public class MySQLJobsDao implements Jobs {
 //    @Override
 
 
-    public Job singleAd(int adId) {
+    public Job singleJob(int JobId) {
         PreparedStatement stmt = null;
         Job job= null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
-            stmt.setLong(1, adId);
+            stmt = connection.prepareStatement("SELECT * FROM Jobs j JOIN Users u ON u.id = j.user_id WHERE j.id = ?");
+            stmt.setLong(1, JobId);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 job = extractJob(rs);
             }
             return job;
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving ad.", e);
+            throw new RuntimeException("Error retrieving Job.", e);
         }
     }
-
-
-
-
-
 }
