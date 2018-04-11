@@ -9,4 +9,16 @@ public interface Jobs {
     List<Job> all();
     // insert a new job and return the new job's id
     int insert(Job job);
+
+    List<Job> userAll(long userId);
+
+    void userDelete(int id);
+
+    Job singleJob(int adId);
+
+    Object getCategories();
+
+    Object search(String query);
+
+    List<Job> searchCat(int query);
 }
