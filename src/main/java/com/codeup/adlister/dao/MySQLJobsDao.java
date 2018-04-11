@@ -88,10 +88,11 @@ public class MySQLJobsDao implements Jobs {
 
     private Job extractJob(ResultSet rs) throws SQLException {
         return new Job(
-                rs.getInt("id"),
-                rs.getString("rest_name"),
-                rs.getString("title"),
-                rs.getString("description")
+                rs.getInt("j.id"),
+                rs.getInt("u.id"),
+                rs.getString("u.rest_name"),
+                rs.getString("j.title"),
+                rs.getString("j.description")
         );
     }
 
