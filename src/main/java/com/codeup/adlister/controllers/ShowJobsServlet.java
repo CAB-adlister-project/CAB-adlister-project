@@ -13,12 +13,8 @@ import java.io.IOException;
 public class ShowJobsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
         int JobID = Integer.parseInt(request.getParameter("id"));
-        request.setAttribute("categories", DaoFactory.getJobsDao().getCategories());
         request.setAttribute("job", DaoFactory.getJobsDao().singleJob(JobID));
-        request.getRequestDispatcher("/WEB-INF/jobs/show.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/Jobs/show.jsp").forward(request, response);
     }
 }

@@ -10,7 +10,9 @@ public interface Jobs {
     // insert a new job and return the new job's id
     int insert(Job job);
 
-    List<Job> userAll(long userId);
+//    List<Job> userAll(long userId);
+
+    List<Job> FindJobsByUserID(int id);
 
     void userDelete(int id);
 
