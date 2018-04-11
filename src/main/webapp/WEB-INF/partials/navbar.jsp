@@ -4,7 +4,9 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/jobs"><img class="logo" src="CSS/img/omeleteLOGO.png" alt="logo"></a>
+
+            <a class="navbar-brand" href="/jobs"><img id="navLogo" src="CSS/img/omeleteLOGO.png" alt="Nav Logo"></a>
+
         </div>
         <ul class="nav navbar-nav navbar-right">
 
