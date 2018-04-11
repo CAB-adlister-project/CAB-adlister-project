@@ -30,8 +30,6 @@
                 <li><a href="/register"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
             </c:if>
 
-
-
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
