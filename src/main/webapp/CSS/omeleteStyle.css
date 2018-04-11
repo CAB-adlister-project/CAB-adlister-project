@@ -4,14 +4,23 @@
 .logo {
     position: relative;
     width: 30%;
-    margin-left: 35%
 }
 
 #navLogo{
     width: 40px
 }
 
-h1, h3, h4 {
+body {
     font-family: "PT Mono";
-    text-align: center;
+}
+
+.card{
+    width: 250px;
+    height: 125px;
+    border-radius:5px;
+    float: left;
+    border: 1px solid rgba(0,0,0,.6);
+    padding: 20px;
+    margin: 50px;
+
 }

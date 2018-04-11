@@ -19,16 +19,16 @@
     <div class="row">
         <div class="col-md-6">
             <div><h2>${job.title}</h2></div>
-            <div>
-                <c:choose>
-                    <c:when test='${job.url != null && job.url.trim() != ""}'>
-                        <img class="img-rounded showImage" src="${job.url}" alt="${job.title}">
-                    </c:when>
-                    <c:otherwise>
-                        <img class="img-rounded" src="">
-                    </c:otherwise>
-                </c:choose>
-            </div>
+            <%--<div>--%>
+                <%--<c:choose>--%>
+                    <%--<c:when test='${job.url != null && job.url.trim() != ""}'>--%>
+                        <%--<img class="img-rounded showImage" src="${job.url}" alt="${job.title}">--%>
+                    <%--</c:when>--%>
+                    <%--<c:otherwise>--%>
+                        <%--<img class="img-rounded" src="">--%>
+                    <%--</c:otherwise>--%>
+                <%--</c:choose>--%>
+            <%--</div>--%>
 
             <div class="col-md-6">
                 <p>${job.description}</p>

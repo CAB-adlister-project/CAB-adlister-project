@@ -187,9 +187,9 @@ public class MySQLJobsDao implements Jobs {
 //        } catch (SQLException e) {
 //            throw new RuntimeException("Error in extractAd", e);
 //        }
-
-
 //    @Override
+
+
     public Job singleAd(int adId) {
         PreparedStatement stmt = null;
         Job job= null;
