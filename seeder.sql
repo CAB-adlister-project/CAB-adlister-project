@@ -1,13 +1,6 @@
 USE omelete_db;
 
 
-INSERT INTO Users(username,email,rest_name,password)
-    VALUES ("Chris", "chris@gmail.com", "Chuys", "pass"),
-      ("Ben", "ben@gmail.com","Mortons", "pass"),
-      ("Alex", "alex@gmail.com","Hooters", "pass"),
-      ("Billy", "billy@gmail.com","The Billy Club", "pass"),
-      ("Bobby", "bobby@gmail.com", "Bobbys place", "pass");
-
 INSERT INTO Jobs(user_id, title, description)
     VALUES(1, "Dishwasher", "Washin dishes yo"),
       (1,"Sous Chef", "Kitchen Bitch"),

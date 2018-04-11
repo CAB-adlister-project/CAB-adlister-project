@@ -16,10 +16,11 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
-            response.sendRedirect("/jobs");
+
+            response.sendRedirect("/profile");
             return;
         }
-
+        System.out.println("error1");
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
@@ -29,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         if (user == null) {
+            System.out.println("error2");
             response.sendRedirect("/login");
             return;
         }
@@ -37,8 +39,10 @@ public class LoginServlet extends HttpServlet {
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("/jobs");
+            request.getSession().setAttribute("user_id", user.getId());
+            response.sendRedirect("/profile");
         } else {
+            System.out.println("error3");
             response.sendRedirect("/login");
         }
     }
