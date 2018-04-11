@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.dao.Jobs;
 import com.codeup.adlister.models.Job;
 
 import javax.servlet.ServletException;
@@ -15,7 +16,6 @@ import java.util.List;
 public class JobsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Job> jobs = DaoFactory.getJobsDao().all();
-        System.out.println(jobs.get(2).getId());
         request.setAttribute("jobs", DaoFactory.getJobsDao().all());
         request.getRequestDispatcher("/WEB-INF/Jobs/index.jsp").forward(request, response);
     }

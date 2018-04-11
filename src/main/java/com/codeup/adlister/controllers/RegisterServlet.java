@@ -17,6 +17,7 @@ public class RegisterServlet extends HttpServlet {
 
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
+            return;
         }
 
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
