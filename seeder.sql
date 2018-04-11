@@ -1,23 +1,42 @@
 USE omelete_db;
 
-INSERT INTO Users(username,email,password)
-    VALUES ("user1", "user1@gmail.com", "pass"),
-      ("user2", "user2@gmail.com", "pass"),
-      ("user3", "user3@gmail.com", "pass");
 
-INSERT INTO Rest_Pro(user_id, name, logo, location, phone_number, description)
-    VALUES(1,"Mortons","image for logo", "2222 NW pkwy, San Antonio TX 78261","555-5555", "A famous classic steakhouse"),
-      (2,"Cru", "image for logo", "300 Navarro St., San Antonio TX 78992", "666-6666", "Cru is the shit, give it a try"),
-      (3,"HopDoddy", "image for logo", "500 w 6th st, San Antonio TX 78901","777-7777", "Hop to it");
+INSERT INTO Users(username,email,rest_name,password)
+    VALUES ("Chris", "chris@gmail.com", "Chuys", "pass"),
+      ("Ben", "ben@gmail.com","Mortons", "pass"),
+      ("Alex", "alex@gmail.com","Hooters", "pass"),
+      ("Billy", "billy@gmail.com","The Billy Club", "pass"),
+      ("Bobby", "bobby@gmail.com", "Bobbys place", "pass");
 
-INSERT INTO Jobs(rest_id, title, description)
+INSERT INTO Jobs(user_id, title, description)
     VALUES(1, "Dishwasher", "Washin dishes yo"),
       (1,"Sous Chef", "Kitchen Bitch"),
+      (1,"Server", "Servin it up"),
+      (1,"Line Cook", "Flippin burgers"),
+      (1,"Executive Chef","You in charge"),
+      (2, "Dishwasher", "Washin dishes yo"),
+      (2,"Sous Chef", "Kitchen Bitch"),
       (2,"Server", "Servin it up"),
-      (3,"Line Cook", "Flippin burgers");
+      (2,"Line Cook", "Flippin burgers"),
+      (2,"Executive Chef","You in charge"),
+      (3, "Dishwasher", "Washin dishes yo"),
+      (3,"Sous Chef", "Kitchen Bitch"),
+      (3,"Server", "Servin it up"),
+      (3,"Line Cook", "Flippin burgers"),
+      (3,"Executive Chef","You in charge"),
+      (4, "Dishwasher", "Washin dishes yo"),
+      (4,"Sous Chef", "Kitchen Bitch"),
+      (4,"Server", "Servin it up"),
+      (4,"Line Cook", "Flippin burgers"),
+      (4,"Executive Chef","You in charge"),
+      (5, "Dishwasher", "Washin dishes yo"),
+      (5,"Sous Chef", "Kitchen Bitch"),
+      (5,"Server", "Servin it up"),
+      (5,"Line Cook", "Flippin burgers"),
+      (5,"Executive Chef","You in charge");
 
-INSERT INTO Categories(type)
-    VALUES("Bar"),("Steakhouse"),("Grill"),("Brazilian"),("American"),("Ethnic");
-
-INSERT INTO Rest_Cat(rest_id, cat_id)
-    VALUES(1,2),(1,3),(1,4),(2,1),(2,3),(2,4),(2,6),(3,2);
+# INSERT INTO Categories(type)
+#     VALUES("Bar"),("Steakhouse"),("Grill"),("Brazilian"),("American"),("Ethnic");
+#
+# INSERT INTO Rest_Cat(jobs_id, cat_id)
+#     VALUES(1,2),(1,3),(1,4),(2,1),(2,3),(2,4),(2,6),(3,2);
