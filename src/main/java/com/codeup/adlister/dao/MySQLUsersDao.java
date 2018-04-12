@@ -31,7 +31,6 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
-            rs.next();
             return extractUser(rs);
         } catch (SQLException e) {
             System.out.println("e.getMessage() = " + e.getMessage());
@@ -41,7 +40,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByID(int ID) {
-        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        String query = "SELECT * FROM users u JOIN jobs j ON u.id = j.user_id WHERE u.id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setLong(1, ID);
@@ -71,8 +70,9 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
+        rs.next();
         return new User(
-            rs.getLong("id"),
+            rs.getInt("id"),
             rs.getString("username"),
             rs.getString("email"),
             rs.getString("rest_name"),
