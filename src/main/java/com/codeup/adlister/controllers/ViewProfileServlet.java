@@ -16,13 +16,19 @@ import java.util.List;
 public class ViewProfileServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        int UserID = Integer.parseInt(request.getParameter("id"));
-        System.out.println(UserID);
-        User user = DaoFactory.getUsersDao().findByID(UserID);
+
+
+//
+//        int UserID = Integer.parseInt(request.getSession().getAttribute("user"));
+//        System.out.println(UserID);
+//        User user = DaoFactory.getUsersDao().findByID(UserID);
+        User user = (User) request.getSession().getAttribute("user");
+
         request.setAttribute("user", user );
         List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID((int)user.getId());
         request.setAttribute("jobs", jobs);

@@ -5,7 +5,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="/jobs"><img id="navLogo" src="CSS/img/omeleteLOGO.png" alt="Nav Logo"></a>
+            <a class="navbar-brand" href="/jobs"><img id="navLogo" src="/CSS/img/omeleteLOGO.png" alt="Nav Logo"></a>
 
         </div>
         <form action="/jobs/search" method="GET" class="navbar-form navbar-left">
