@@ -40,7 +40,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByID(int ID) {
-        String query = "SELECT * FROM users u JOIN jobs j ON u.id = j.user_id WHERE u.id = ?";
+        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setLong(1, ID);
@@ -72,7 +72,7 @@ public class MySQLUsersDao implements Users {
     private User extractUser(ResultSet rs) throws SQLException {
         rs.next();
         return new User(
-            rs.getInt("id"),
+            rs.getLong("id"),
             rs.getString("username"),
             rs.getString("email"),
             rs.getString("rest_name"),

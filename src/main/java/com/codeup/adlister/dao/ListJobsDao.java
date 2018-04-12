@@ -46,8 +46,8 @@ public abstract class ListJobsDao implements Jobs {
     @Override
     public HashMap<Integer, String> getCategories() {return null;}
 
-    @Override
-    public List<Job> searchCat(int query){return null;}
+//    @Override
+//    public List<Job> searchCat(int query){return null;}
 
 
 

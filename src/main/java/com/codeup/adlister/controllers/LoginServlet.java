@@ -15,6 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
+
             response.sendRedirect("/profile");
             return;
         }
@@ -23,25 +24,24 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("Post!!");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
         if (user == null) {
+
             response.sendRedirect("/login");
             return;
         }
 
-        System.out.println(user.getEmail());
-        System.out.println(password);
-        System.out.println(user.getPassword());
         boolean validAttempt = Password.check(password, user.getPassword());
-        System.out.println("validAttempt = " + validAttempt);
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
+
             response.sendRedirect("/jobs");
             return;
+
         } else {
+
             response.sendRedirect("/login");
             return;
         }
