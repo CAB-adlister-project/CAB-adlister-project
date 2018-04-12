@@ -71,14 +71,17 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        rs.next();
-        return new User(
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("rest_name"),
-            rs.getString("rest_cat"),
-            rs.getString("password")
-        );
+        if(rs.next() == false) {
+            return null;
+        } else {
+            return new User(
+                    rs.getLong("id"),
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("rest_name"),
+                    rs.getString("rest_cat"),
+                    rs.getString("password")
+            );
+        }
     }
 }

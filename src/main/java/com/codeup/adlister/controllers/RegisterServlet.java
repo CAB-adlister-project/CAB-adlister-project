@@ -64,6 +64,12 @@ public class RegisterServlet extends HttpServlet {
             String usernameIsEmpty = "You must enter an username.";
             listOfErrors.add(usernameIsEmpty);
             inputHasErrors = true;
+        } else {
+            User user = DaoFactory.getUsersDao().findByUsername(username);
+            if (user != null) {
+                listOfErrors.add("This username already exists");
+                inputHasErrors = true;
+            }
         }
         if(!Email.validate(email)) {
             String invalidEmail = "You have entered an invalid email format.";
@@ -87,7 +93,8 @@ public class RegisterServlet extends HttpServlet {
             inputHasErrors = true;
         }
 
-        //username has to have these parameters
+//        username has to have these parameters
+//        input = valid if (only letter) || (only letter & numbers)
 //        Pattern pattern = Pattern.compile("[A-Za-z]+[0-9]+");
 //        boolean validUsername = username != null && pattern.matcher(username).matches();
 //
@@ -99,11 +106,11 @@ public class RegisterServlet extends HttpServlet {
 //
 //        User user = DaoFactory.getUsersDao().findByUsername(username);
 //
-//        if (user != null) {
+//        if (validUsername) {
 //            String usernameExists = "User already exists.";
 //            listOfErrors.add(usernameExists);
 //            inputHasErrors = true;
-//        }
+////        }
 
         //check for errors
         if (inputHasErrors) {
