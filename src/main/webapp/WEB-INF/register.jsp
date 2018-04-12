@@ -44,6 +44,20 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
+            <div class="form-group">
+                <label for="rest_cat">
+                    <select name="rest_cat" id="rest_cat">
+                        <option value="null">Please Select A Category</option>
+                        <option value="bar">Bar</option>
+                        <option value="grill">Grill</option>
+                        <option value="steakhouse">Steak House</option>
+                        <option value="texmex">Tex Mex</option>
+                        <option value="sushi">Sushi</option>
+                        <option value="italian">Italian</option>
+                    </select>
+                </label>
+            </div>
+
             <input type="submit" class="btn btn-primary btn-block">
         </form>
 

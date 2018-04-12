@@ -2,12 +2,12 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -29,7 +29,9 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String rest_name = request.getParameter("rest_name");
         String password = request.getParameter("password");
+        String rest_cat = request.getParameter("rest_cat");
         String passwordConfirmation = request.getParameter("confirm_password");
+
 
 
 
@@ -66,6 +68,12 @@ public class RegisterServlet extends HttpServlet {
             inputHasErrors = true;
         }
 
+        if (rest_cat.equalsIgnoreCase("null")) {
+            String rest_nameIsEmpty = "You must enter a restaurant category";
+            listOfErrors.add(rest_nameIsEmpty);
+            inputHasErrors = true;
+        }
+
 
         if (inputHasErrors) {
             request.getSession().setAttribute("listOfErrors", listOfErrors);
@@ -74,7 +82,7 @@ public class RegisterServlet extends HttpServlet {
 
             // create and save a new user
 
-            User user = new User(username, email, rest_name, password);
+            User user = new User(username, email, rest_name, rest_cat, password);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }

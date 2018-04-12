@@ -7,23 +7,34 @@ public class User {
     private String username;
     private String email;
     private String rest_name;
+    private String rest_cat;
     private String password;
 
     public User() {}
 
-    public User(String username, String email, String rest_name, String password) {
+    public User(String username, String email, String rest_name, String rest_cat, String password) {
         this.username = username;
         this.email = email;
         this.rest_name = rest_name;
+        this.rest_cat = rest_cat;
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String rest_name, String password) {
+    public User(long id, String username, String email, String rest_name, String rest_cat, String password) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.rest_name = rest_name;
+        this.rest_cat = rest_cat;
         this.password = password;
+    }
+
+    public String getRest_cat() {
+        return rest_cat;
+    }
+
+    public void setRest_cat(String rest_cat) {
+        this.rest_cat = rest_cat;
     }
 
     public String getRest_name() {
