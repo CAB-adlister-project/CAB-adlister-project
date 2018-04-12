@@ -4,8 +4,6 @@
 <head>
 
 
-
-    <%--stupid add asdfasdf commit --%>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="${user.rest_name} Profile" />
     </jsp:include>
@@ -32,9 +30,9 @@
                             <input hidden type="text" name="id" value="${job.id}">
                             <button>Delete</button>
                         </form>
-                            <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
+                        <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
                     </div>
-    </div>
+                </div>
 
 
 
