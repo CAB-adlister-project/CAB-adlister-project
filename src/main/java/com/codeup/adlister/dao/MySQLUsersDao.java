@@ -70,6 +70,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    //checks for user verification
     private User extractUser(ResultSet rs) throws SQLException {
         if(rs.next() == false) {
             return null;
