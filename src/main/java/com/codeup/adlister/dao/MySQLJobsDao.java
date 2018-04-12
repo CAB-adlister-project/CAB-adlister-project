@@ -76,7 +76,7 @@ public class MySQLJobsDao implements Jobs {
 //    public Object search(String query) {
 //        return null;
 //    }
-//
+////
 //    @Override
 //    public List<Job> searchCat(int query) {
 //        return null;
@@ -105,22 +105,10 @@ public class MySQLJobsDao implements Jobs {
     public List<Job> search(String searchQuery) {
         PreparedStatement stmt = null;
         try {
-            String sql = "SELECT * FROM ads WHERE title LIKE ?";
+            String sql = "SELECT * FROM jobs j JOIN users u ON u.id = j.user_id WHERE j.title LIKE ? or u.rest_name LIKE ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, "%" + searchQuery + "%");
-            ResultSet rs = stmt.executeQuery();
-            return createJobsFromResults(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving ads.", e);
-        }
-    }
-    @Override
-    public List<Job> searchCat(int query) {
-        PreparedStatement stmt = null;
-        try {
-            String sql = "SELECT * FROM jobs WHERE category = ?";
-            stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, query);
+            stmt.setString(2, "%" + searchQuery + "%");
             ResultSet rs = stmt.executeQuery();
             return createJobsFromResults(rs);
         } catch (SQLException e) {
@@ -128,7 +116,22 @@ public class MySQLJobsDao implements Jobs {
         }
     }
 
-@Override
+
+    @Override
+//    public List<Job> searchCat(int query) {
+//        PreparedStatement stmt = null;
+//        try {
+//            String sql = "SELECT * FROM jobs WHERE category = ?";
+//            stmt = connection.prepareStatement(sql);
+//            stmt.setInt(1, query);
+//            ResultSet rs = stmt.executeQuery();
+//            return createJobsFromResults(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving ads.", e);
+//        }
+//    }
+
+//@Override
     public List<Job> FindJobsByUserID(int userId) {
         // used to display user ads on user profile
         PreparedStatement stmt = null;

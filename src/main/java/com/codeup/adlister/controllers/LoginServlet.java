@@ -3,7 +3,6 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Password;
-import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +19,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
             return;
         }
-        System.out.println("error1");
+      
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
@@ -28,22 +27,23 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
-
         if (user == null) {
-            System.out.println("error2");
+            
             response.sendRedirect("/login");
             return;
         }
 
         boolean validAttempt = Password.check(password, user.getPassword());
-
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
-            request.getSession().setAttribute("user_id", user.getId());
-            response.sendRedirect("/profile");
+
+            response.sendRedirect("/jobs");
+            return;
+
         } else {
-            System.out.println("error3");
+            
             response.sendRedirect("/login");
+            return;
         }
     }
 }

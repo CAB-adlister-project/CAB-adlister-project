@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -23,7 +24,7 @@ public class RegisterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String rest_name = request.getParameter("rest_name");
@@ -31,75 +32,51 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
 
 
-        // sets the checks for register form / add more features
-        HttpSession session = request.getSession();
 
-        if (password == null || password.trim() == "") {
-            session.removeAttribute("password_error");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("rest_name_error");
-            session.setAttribute("password_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"password\" error!</h3>");
-            response.sendRedirect("/register");
-        } else if (!password.equals(passwordConfirmation)) {
-            session.removeAttribute("password_error");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("rest_name_error");
-            session.setAttribute("password_mismatch", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"passwords\" do not match!</h3>");
-            response.sendRedirect("/register");
-        } else if (email == null || email.trim() == "") {
-            session.removeAttribute("password_error");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("rest_name_error");
-            session.setAttribute("email_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"email\" error!</h3>");
-            response.sendRedirect("/register");
-        } else if (username == null || username.trim() == "") {
-            session.removeAttribute("password_error");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("rest_name_error");
-            session.setAttribute("username_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry \"username\" error!</h3>");
-            response.sendRedirect("/register");
-        } else if (rest_name == null || rest_name.trim() == "") {
-            session.removeAttribute("password_error");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("rest_name_error");
-            session.setAttribute("rest_name_error", "<h3 class=\"register-error\"style=\"color:red\">Sorry, error! \"You must enter a restaurant name\"</h3>");
-            response.sendRedirect("/register");
+        // validate input
+        boolean inputHasErrors = false;
+
+        //create a list of possible errors and responses
+        ArrayList<String> listOfErrors = new ArrayList<>();
+
+        //sets the checks for register form / add more features
+        if (password.isEmpty()) {
+            String passwordIsEmpty = "You must enter a password.";
+            listOfErrors.add(passwordIsEmpty);
+            inputHasErrors = true;
+        }
+        if (!password.equals(passwordConfirmation)) {
+            String passwordDontMatch = "Your passwords don't match.";
+            listOfErrors.add(passwordDontMatch);
+            inputHasErrors = true;
+        }
+        if (email.isEmpty()) {
+            String emailIsEmpty = "You must enter a valid email.";
+            listOfErrors.add(emailIsEmpty);
+            inputHasErrors = true;
+        }
+        if (username.isEmpty()) {
+            String usernameIsEmpty = "You must enter an username.";
+            listOfErrors.add(usernameIsEmpty);
+            inputHasErrors = true;
+        }
+        if (rest_name.isEmpty()) {
+            String rest_nameIsEmpty = "You must enter a restaurant name";
+            listOfErrors.add(rest_nameIsEmpty);
+            inputHasErrors = true;
+        }
+
+
+        if (inputHasErrors) {
+            request.getSession().setAttribute("listOfErrors", listOfErrors);
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
         } else {
-            session.removeAttribute("password_error");
-            session.removeAttribute("password_mismatch");
-            session.removeAttribute("email_error");
-            session.removeAttribute("username_error");
-            session.setAttribute("username", username);
-            session.setAttribute("password", password);
-            session.setAttribute("email", email);
 
+            // create and save a new user
 
-                        // validate input
-            boolean inputHasErrors = username.isEmpty()
-                    || email.isEmpty()
-                    || password.isEmpty()
-                    || (!password.equals(passwordConfirmation));
-
-            if (inputHasErrors) {
-                response.sendRedirect("/register");
-                return;
-            }
-
-                    // create and save a new user
             User user = new User(username, email, rest_name, password);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }
-
     }
 }
