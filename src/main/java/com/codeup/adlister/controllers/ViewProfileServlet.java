@@ -18,9 +18,9 @@ public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int UserID = Integer.parseInt(request.getParameter("id"));
+        System.out.println(UserID);
         User user = DaoFactory.getUsersDao().findByID(UserID);
         request.setAttribute("user", user );
-        System.out.println(user.getEmail());
         List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID((int)user.getId());
         request.setAttribute("jobs", jobs);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
