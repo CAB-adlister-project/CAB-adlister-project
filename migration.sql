@@ -2,9 +2,6 @@ USE omelete_db;
 
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Jobs;
-DROP TABLE IF EXISTS Categories;
-DROP TABLE IF EXISTS Rest_Cat;
-
 
 CREATE TABLE users(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -12,6 +9,7 @@ CREATE TABLE users(
     email VARCHAR(240) NOT NULL,
     password VARCHAR(240) NOT NULL,
     rest_name VARCHAR(500) NOT NULL,
+    rest_cat VARCHAR(400) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -22,20 +20,6 @@ CREATE TABLE jobs (
     description TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(id),
     PRIMARY KEY (id)
-);
-
-CREATE TABLE categories(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    type VARCHAR(200),
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE rest_cat(
-    jobs_id INT UNSIGNED NOT NULL,
-    cat_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY(jobs_id) REFERENCES Jobs(id),
-    FOREIGN KEY (cat_id) REFERENCES Categories(id)
-
 );
 
 
