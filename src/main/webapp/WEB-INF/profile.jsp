@@ -27,16 +27,14 @@
                         <br>
                         <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
                     </div>
-                </div>
-
-                <div>
-                    <form action="/delete" method="post">
-                        <input hidden type="text" name="id" value="${job.id}">
-                        <button>Delete</button>
-                    </form>
-                    <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
-                </div>
-
+                    <div>
+                        <form action="/delete" method="post">
+                            <input hidden type="text" name="id" value="${job.id}">
+                            <button>Delete</button>
+                        </form>
+                            <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
+                    </div>
+    </div>
 
 
 
