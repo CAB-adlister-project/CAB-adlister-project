@@ -5,7 +5,7 @@
 
 
 
-    <%--stupid add commit --%>
+    <%--stupid add asdfasdf commit --%>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="${user.rest_name} Profile" />
     </jsp:include>
