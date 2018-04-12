@@ -14,6 +14,14 @@
             <h2>${job.title}</h2>
                 <p>${job.description}</p>
         <div>
+
+
+
+
+
+
+
+
                 <%--<c:choose>--%>
                     <%--<c:when test='${job.url != null && job.url.trim() != ""}'>--%>
                         <%--<img class="img-rounded showImage" src="${job.url}" alt="${job.title}">--%>
