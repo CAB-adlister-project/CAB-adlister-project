@@ -31,7 +31,6 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
-            rs.next();
             return extractUser(rs);
         } catch (SQLException e) {
             System.out.println("e.getMessage() = " + e.getMessage());
@@ -71,6 +70,7 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
+        rs.next();
         return new User(
             rs.getLong("id"),
             rs.getString("username"),

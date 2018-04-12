@@ -8,7 +8,7 @@
             <a class="navbar-brand" href="/jobs"><img id="navLogo" src="CSS/img/omeleteLOGO.png" alt="Nav Logo"></a>
 
         </div>
-        <form action="/search" method="get" class="navbar-form navbar-left">
+        <form action="/jobs/search" method="GET" class="navbar-form navbar-left">
             <div class="input-group">
                 <input type="text" class="form-control" name="searchQuery" id="searchQuery" placeholder="Search for...">
                 <span class="input-group-btn">

@@ -22,5 +22,5 @@ public interface Jobs {
 
     Object search(String query);
 
-    List<Job> searchCat(int query);
+//    List<Job> searchCat(int query);
 }
