@@ -28,8 +28,8 @@ INSERT INTO Jobs(user_id, title, description)
       (5,"Line Cook", "Flippin burgers"),
       (5,"Executive Chef","You in charge");
 
-# INSERT INTO Categories(type)
-#     VALUES("Bar"),("Steakhouse"),("Grill"),("Brazilian"),("American"),("Ethnic");
-#
-# INSERT INTO Rest_Cat(jobs_id, cat_id)
-#     VALUES(1,2),(1,3),(1,4),(2,1),(2,3),(2,4),(2,6),(3,2);
+INSERT INTO Categories(type)
+    VALUES("Bar"),("Steakhouse"),("Grill"),("Brazilian"),("American"),("Ethnic");
+
+INSERT INTO Rest_Cat(jobs_id, cat_id)
+    VALUES(1,2),(1,3),(1,4),(2,1),(2,3),(2,4),(2,6),(3,2);
