@@ -70,7 +70,9 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
+
         rs.next();
+
         return new User(
             rs.getLong("id"),
             rs.getString("username"),

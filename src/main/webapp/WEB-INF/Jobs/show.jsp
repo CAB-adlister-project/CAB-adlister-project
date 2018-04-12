@@ -3,19 +3,17 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="${job.title} @ ${job.rest_name}"/>
+        <jsp:param name="title" value="Job Description" />
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div><h1>${job.rest_name}</h1></div>
-            <div><h2>${job.title}</h2></div>
-            <p>${job.description}</p>
-            <div></div>
-            <div>
+        <div class="row">
+            <h1>${job.rest_name}</h1>
+            <h2>${job.title}</h2>
+                <p>${job.description}</p>
+        <div>
                 <%--<c:choose>--%>
                     <%--<c:when test='${job.url != null && job.url.trim() != ""}'>--%>
                         <%--<img class="img-rounded showImage" src="${job.url}" alt="${job.title}">--%>

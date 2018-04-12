@@ -32,6 +32,7 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
 
 
+
         // validate input
         boolean inputHasErrors = false;
 
@@ -65,11 +66,14 @@ public class RegisterServlet extends HttpServlet {
             inputHasErrors = true;
         }
 
+
         if (inputHasErrors) {
             request.getSession().setAttribute("listOfErrors", listOfErrors);
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
         } else {
+
             // create and save a new user
+
             User user = new User(username, email, rest_name, password);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
