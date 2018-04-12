@@ -18,5 +18,6 @@ public class JobsIndexServlet extends HttpServlet {
         List<Job> jobs = DaoFactory.getJobsDao().all();
         request.setAttribute("jobs", DaoFactory.getJobsDao().all());
         request.getRequestDispatcher("/WEB-INF/Jobs/index.jsp").forward(request, response);
+
     }
 }
