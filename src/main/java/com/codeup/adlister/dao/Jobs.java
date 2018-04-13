@@ -16,6 +16,7 @@ public interface Jobs {
 
 
 
+
     void userDelete(int id);
 
     Job singleJob(int adId);
