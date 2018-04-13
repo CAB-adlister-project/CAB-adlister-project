@@ -20,7 +20,7 @@
 
 
             <c:if test="${sessionScope.user != null}">
-                <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
+                <li><a href="/profile?id=${user.id}"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
                 <li><a href="/jobs/post"><span class="glyphicon glyphicon-file"></span> Post Jobs</a></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-eject"></span> Logout</a></li>
             </c:if>
