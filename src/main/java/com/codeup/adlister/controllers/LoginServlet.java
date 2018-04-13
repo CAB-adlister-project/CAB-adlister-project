@@ -33,17 +33,17 @@ public class LoginServlet extends HttpServlet {
         boolean inputHasErrors = false;
 
         //create a list of possible errors and responses
-        ArrayList<String> errors = new ArrayList<>();
+        ArrayList<String> listOfErrors = new ArrayList<>();
 
         //sets the checks for register form / add more features
 
         if (username.isEmpty()||password.isEmpty()) {
-            errors.add("You entered an invalid username or password.");
+            listOfErrors.add("You entered an invalid username or password.");
             inputHasErrors = true;
         }
 
         if (inputHasErrors) {
-            request.getSession().setAttribute("errors", errors);
+            request.getSession().setAttribute("listOfErrors", listOfErrors);
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
 
