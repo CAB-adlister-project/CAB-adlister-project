@@ -5,6 +5,7 @@ import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.List;
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -39,6 +40,11 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
+    public List<User> all() {
+        return null;
+    }
+
+    @Override
     public User findByID(int ID) {
         String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
         try {
@@ -61,6 +67,7 @@ public class MySQLUsersDao implements Users {
             stmt.setString(3,user.getRest_name());
             stmt.setString(4,user.getRest_cat());
             stmt.setString(5, user.getPassword());
+
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();

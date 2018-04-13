@@ -14,7 +14,6 @@
     <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container-fluid">
 
-
             <h3>Listings from ${user.rest_name}</h3>
 
             <c:forEach var="job" items="${jobs}">
@@ -33,9 +32,6 @@
                         <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
                     </div>
                 </div>
-
-
-
             </c:forEach>
     </div>
     </div>
