@@ -22,16 +22,13 @@
                 <div class="card">
                     <div class="card-body">
                         <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
-                        <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
-                        <br>
-                        <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
                     </div>
                     <div>
                         <form action="/delete" method="post">
                             <input hidden type="text" name="id" value="${job.id}">
-                            <button>Delete</button>
+                            <button class="btn btn-danger">Delete</button>
                         </form>
-                        <a class="btn btn-default btn-xs" href="/editPost" role="button">Edit</a>
+                        <%--<a class="btn btn-default btn-xs" href="/editPost" role="button">Edit</a>--%>
                     </div>
                 </div>
             </c:forEach>

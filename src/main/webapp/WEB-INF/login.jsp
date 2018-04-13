@@ -8,7 +8,8 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container-fluid">
-        <h1>Please Log In</h1>
+        <div class="job">
+        <h1 class="text-center">Please Log In</h1>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -20,6 +21,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
+    </div>
     </div>
 </body>
 </html>

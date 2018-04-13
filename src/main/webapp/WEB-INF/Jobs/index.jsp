@@ -10,14 +10,14 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 
-<h1 class="text-center">Here Are all the jobs!</h1>
+<u><h1 class="text-center">Current Job Listings</h1></u>
 <div class="container-fluid">
     <div class="ads">
     <c:forEach var="job" items="${jobs}">
         <div class="card">
                 <a  href="/jobs/show?id=${job.id}" class="card-link"><h4>${job.title}</h4></a>
             <u><h5 class="card-subtitle mb-2">${job.rest_name}</h5></u>
-                <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
+                <a href="/jobs/alljobs?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
             </div>
     </c:forEach>
     </div>

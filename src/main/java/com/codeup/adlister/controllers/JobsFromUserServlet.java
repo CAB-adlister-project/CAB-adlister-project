@@ -1,6 +1,5 @@
 package com.codeup.adlister.controllers;
 
-
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Job;
 import com.codeup.adlister.models.User;
@@ -13,23 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
-public class ViewProfileServlet extends HttpServlet {
+@WebServlet(name = "JobsFromUserServlet", urlPatterns = "/jobs/alljobs")
+public class JobsFromUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
-
         if(request.getParameter("id")!=null){
             int userId = Integer.parseInt(request.getParameter("id"));
             List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID(userId);
             request.setAttribute("jobs", jobs);
             User user = DaoFactory.getUsersDao().findByID(userId);
             request.setAttribute("user", user);
-            request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/alljobs.jsp").forward(request, response);
             return;
         }
     }
