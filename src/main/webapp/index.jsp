@@ -7,7 +7,7 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <%--<jsp:include page="/WEB-INF/partials/navbar.jsp" />--%>
     <div class="landingPage">
     <div class="container text-center">
         <div class="jumbotron">
@@ -17,8 +17,8 @@
             <h1>Welcome to Omelete!</h1>
                 <h3>About Company</h3>
                     <h4>The most common problem in the restaurant industry is the difficulty of finding valued employees. Allow Omelete to assist. Post your job listing here and have it been seen by thousands of users. </h4>
-        <form action="/jobs/post" method="GET">
-            <input type="submit" class="btn btn-primary btn-block" value="Post Job">
+        <form action="/jobs" method="GET">
+            <input type="submit" class="btn btn-primary btn-block" value="Get Started">
         </form>
         </div>
     </div>
