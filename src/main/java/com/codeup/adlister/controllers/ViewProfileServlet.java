@@ -32,17 +32,5 @@ public class ViewProfileServlet extends HttpServlet {
             return;
 
         }
-
-
-        User user = (User) request.getSession().getAttribute("user");
-        request.setAttribute("user", user );
-        List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID((int)user.getId());
-        request.setAttribute("jobs", jobs);
-        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
-
-        int otherUsersJobs = Integer.parseInt(request.getParameter("jobs.user_id"));
-        request.setAttribute("otherUsersJobs", otherUsersJobs);
-
-
     }
 }
