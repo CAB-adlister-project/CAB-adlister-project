@@ -25,7 +25,7 @@
                         <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
                         <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
                         <br>
-                        <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
+                        <a href="/profile?id=${user_id}" class="card-link">More from ${job.rest_name}</a>
                     </div>
                     <div>
                         <form action="/delete" method="post">
@@ -34,10 +34,7 @@
                         </form>
                             <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
                     </div>
-    </div>
-
-
-
+                </div>
             </c:forEach>
     </div>
     </div>
