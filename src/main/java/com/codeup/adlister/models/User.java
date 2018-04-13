@@ -29,13 +29,6 @@ public class User {
         this.password = password;
     }
 
-    public String getRest_cat() {
-        return rest_cat;
-    }
-
-    public void setRest_cat(String rest_cat) {
-        this.rest_cat = rest_cat;
-    }
 
     public String getRest_name() {
         return rest_name;
@@ -75,5 +68,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = Password.hash(password);
+    }
+
+    public String getRest_cat() {
+        return rest_cat;
     }
 }
