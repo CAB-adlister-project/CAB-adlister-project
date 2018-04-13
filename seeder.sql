@@ -1,6 +1,7 @@
 USE omelete_db;
 
 
+
 INSERT INTO Jobs(user_id, title, description, job_cat)
     VALUES(1, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
       (1,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
@@ -32,3 +33,4 @@ INSERT INTO Jobs(user_id, title, description, job_cat)
       (3, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
       (4, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
       (5, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar");
+
