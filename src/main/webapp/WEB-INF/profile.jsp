@@ -14,8 +14,9 @@
     <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container-fluid">
 
-            <h3>Listings from ${user.rest_name}</h3>
+            <h1 class="text-center">Listings from ${user.rest_name}</h1>
 
+        <div class="ads">
             <c:forEach var="job" items="${jobs}">
                 <div class="card">
                     <div class="card-body">
@@ -33,6 +34,7 @@
                     </div>
                 </div>
             </c:forEach>
+    </div>
     </div>
     </div>
 
