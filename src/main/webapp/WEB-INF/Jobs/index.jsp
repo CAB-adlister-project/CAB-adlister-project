@@ -19,7 +19,7 @@
                 <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
                 <a  href="/jobs/show?id=${job.id}" class="card-link">View Job</a>
                 <br>
-                <a href="/profile" class="card-link">More from ${job.rest_name}</a>
+                <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
             </div>
         </div>
 

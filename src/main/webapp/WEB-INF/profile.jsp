@@ -13,7 +13,7 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container-fluid">
-        <h1>${sessionScope.user.username} Profile Page!</h1>
+
 
             <h3>Listings from ${user.rest_name}</h3>
 

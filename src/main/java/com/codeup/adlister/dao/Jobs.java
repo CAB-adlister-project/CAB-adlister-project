@@ -14,6 +14,8 @@ public interface Jobs {
 
     List<Job> FindJobsByUserID(int id);
 
+
+
     void userDelete(int id);
 
     Job singleJob(int adId);
