@@ -105,10 +105,12 @@ public class MySQLJobsDao implements Jobs {
     public List<Job> search(String searchQuery) {
         PreparedStatement stmt = null;
         try {
-            String sql = "SELECT * FROM jobs j JOIN users u ON u.id = j.user_id WHERE j.title LIKE ? or u.rest_name LIKE ?";
+            String sql = "SELECT * FROM jobs j JOIN users u ON u.id = j.user_id WHERE j.title LIKE ? or u.rest_name LIKE ? or u.rest_cat LIKE ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, "%" + searchQuery + "%");
             stmt.setString(2, "%" + searchQuery + "%");
+            stmt.setString(3, "%" + searchQuery + "%");
+
             ResultSet rs = stmt.executeQuery();
             return createJobsFromResults(rs);
         } catch (SQLException e) {

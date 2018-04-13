@@ -16,8 +16,7 @@
 
             <h3>Listings from ${user.rest_name}</h3>
 
-
-            <c:forEach var="job" items="${otherJobs}">
+            <c:forEach var="job" items="${jobs}">
                 <div class="card">
                     <div class="card-body">
                         <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
