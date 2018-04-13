@@ -13,7 +13,6 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container-fluid">
-        <%--<h1>${sessionScope.user.username} Profile Page!</h1>--%>
 
             <h3>Listings from ${user.rest_name}</h3>
 
@@ -34,12 +33,6 @@
                         <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 448c8cdc6c72cc5897b893191bc3e0812d2c460c
             </c:forEach>
     </div>
     </div>

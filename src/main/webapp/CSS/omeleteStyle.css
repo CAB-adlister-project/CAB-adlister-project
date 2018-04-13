@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
-
 .logo {
     position: relative;
     width: 30%;
@@ -9,8 +8,6 @@
 #navLogo{
     width: 40px
 }
-
-
 
 body {
     font-family: "PT Mono";
