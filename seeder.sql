@@ -7,6 +7,7 @@ INSERT INTO Jobs(user_id, title, description)
       (1,"Server", "Servin it up"),
       (1,"Line Cook", "Flippin burgers"),
       (1,"Executive Chef","You in charge"),
+      (1, "Dishwasher", "Washin dishes yo"),
       (2, "Dishwasher", "Washin dishes yo"),
       (2,"Sous Chef", "Kitchen Bitch"),
       (2,"Server", "Servin it up"),

@@ -19,14 +19,6 @@ public class EditPostServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            User user = (User) request.getSession().getAttribute("user");
-            Job job = new Job(
-                    (int) user.getId(),
-                    request.getParameter("rest_name"),
-                    request.getParameter("title"),
-                    request.getParameter("description")
-            );
-            DaoFactory.getJobsDao().insert(job);
-            response.sendRedirect("/profile");
-        }
+
     }
+}
