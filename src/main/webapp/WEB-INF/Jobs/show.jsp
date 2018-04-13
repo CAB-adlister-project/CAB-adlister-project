@@ -8,12 +8,14 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
-        <div class="row">
+<div class="container-fluid">
+    <div class="ads">
+        <div class="card">
             <h1>${job.rest_name}</h1>
             <h2>${job.title}</h2>
                 <p>${job.description}</p>
         <div>
+        </div>
 
 
 

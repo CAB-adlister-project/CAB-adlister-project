@@ -1,36 +1,34 @@
 USE omelete_db;
 
 
-INSERT INTO Jobs(user_id, title, description)
-    VALUES(1, "Dishwasher", "Washin dishes yo"),
-      (1,"Sous Chef", "Kitchen Bitch"),
-      (1,"Server", "Servin it up"),
-      (1,"Line Cook", "Flippin burgers"),
-      (1,"Executive Chef","You in charge"),
-      (1, "Dishwasher", "Washin dishes yo"),
-      (2, "Dishwasher", "Washin dishes yo"),
-      (2,"Sous Chef", "Kitchen Bitch"),
-      (2,"Server", "Servin it up"),
-      (2,"Line Cook", "Flippin burgers"),
-      (2,"Executive Chef","You in charge");
-#       (3, "Dishwasher", "Washin dishes yo"),
-#       (3,"Sous Chef", "Kitchen Bitch"),
-#       (3,"Server", "Servin it up"),
-#       (3,"Line Cook", "Flippin burgers"),
-#       (3,"Executive Chef","You in charge"),
-#       (4, "Dishwasher", "Washin dishes yo"),
-#       (4,"Sous Chef", "Kitchen Bitch"),
-#       (4,"Server", "Servin it up"),
-#       (4,"Line Cook", "Flippin burgers"),
-#       (4,"Executive Chef","You in charge"),
-#       (5, "Dishwasher", "Washin dishes yo"),
-#       (5,"Sous Chef", "Kitchen Bitch"),
-#       (5,"Server", "Servin it up"),
-#       (5,"Line Cook", "Flippin burgers"),
-#       (5,"Executive Chef","You in charge");
-
-# INSERT INTO Categories(type)
-#     VALUES("Bar"),("Steakhouse"),("Grill"),("Brazilian"),("American"),("Ethnic");
-#
-# INSERT INTO Rest_Cat(jobs_id, cat_id)
-#     VALUES(1,2),(1,3),(1,4),(2,1),(2,3),(2,4),(2,6),(3,2);
+INSERT INTO Jobs(user_id, title, description, job_cat)
+    VALUES(1, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
+      (1,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
+      (1,"Server", "greet customers, take food orders, bring food and drinks to the tables and take payment and make change. Casual dining restaurants and caf?s will expect you to be quick, efficient and friendly.", "Server"),
+      (1,"Line Cook", "Responsibilities. Include: Setting up and stocking stations with all necessary supplies. Preparing food for service (e.g. chopping vegetables, butchering meat, or preparing sauces)", "Cook"),
+      (1,"Executive Chef","developing new recipes, planning menus, hiring or training food preparation workers, maintaining an inventory of food supplies, following a food budget, doing purchase orders, reporting to the head restaurateur, and completing other administrative tasks", "Cook"),
+      (2, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
+      (2,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
+      (2,"Server", "greet customers, take food orders, bring food and drinks to the tables and take payment and make change. Casual dining restaurants and caf?s will expect you to be quick, efficient and friendly.", "Server"),
+      (2,"Line Cook", "Responsibilities. Include: Setting up and stocking stations with all necessary supplies. Preparing food for service (e.g. chopping vegetables, butchering meat, or preparing sauces)", "Cook"),
+      (2,"Executive Chef","developing new recipes, planning menus, hiring or training food preparation workers, maintaining an inventory of food supplies, following a food budget, doing purchase orders, reporting to the head restaurateur, and completing other administrative tasks", "Cook"),
+      (3, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
+      (3,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
+      (3,"Server", "greet customers, take food orders, bring food and drinks to the tables and take payment and make change. Casual dining restaurants and caf?s will expect you to be quick, efficient and friendly.", "Server"),
+      (3,"Line Cook", "Responsibilities. Include: Setting up and stocking stations with all necessary supplies. Preparing food for service (e.g. chopping vegetables, butchering meat, or preparing sauces)", "Cook"),
+      (3,"Executive Chef","developing new recipes, planning menus, hiring or training food preparation workers, maintaining an inventory of food supplies, following a food budget, doing purchase orders, reporting to the head restaurateur, and completing other administrative tasks", "Cook"),
+      (4, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
+      (4,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
+      (4,"Server", "greet customers, take food orders, bring food and drinks to the tables and take payment and make change. Casual dining restaurants and caf?s will expect you to be quick, efficient and friendly.", "Server"),
+      (4,"Line Cook", "Responsibilities. Include: Setting up and stocking stations with all necessary supplies. Preparing food for service (e.g. chopping vegetables, butchering meat, or preparing sauces)", "Cook"),
+      (4,"Executive Chef","developing new recipes, planning menus, hiring or training food preparation workers, maintaining an inventory of food supplies, following a food budget, doing purchase orders, reporting to the head restaurateur, and completing other administrative tasks", "Cook"),
+      (5, "Dishwasher", " Clean dishes, kitchen, food preparation equipment, or utensils. Wash dishes, glassware, flatware, pots, or pans, using dishwashers or by hand. Maintain kitchen work areas, equipment, or utensils in clean and orderly condition.", "Dishwasher"),
+      (5,"Sous Chef", "The sous-chef has many responsibilities, because the executive chef has a more overarching role. Sous-chefs must plan and direct how the food is presented on the plate, keep their kitchen staff in order, train new chefs, create the work schedule, and make sure all the food that goes to customers is of the best quality to maintain high standards", "Cook"),
+      (5,"Server", "greet customers, take food orders, bring food and drinks to the tables and take payment and make change. Casual dining restaurants and caf?s will expect you to be quick, efficient and friendly.", "Server"),
+      (5,"Line Cook", "Responsibilities. Include: Setting up and stocking stations with all necessary supplies. Preparing food for service (e.g. chopping vegetables, butchering meat, or preparing sauces)", "Cook"),
+      (5,"Executive Chef","developing new recipes, planning menus, hiring or training food preparation workers, maintaining an inventory of food supplies, following a food budget, doing purchase orders, reporting to the head restaurateur, and completing other administrative tasks", "Cook"),
+      (1, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
+      (2, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
+      (3, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
+      (4, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar"),
+      (5, "Bartender", " Preparing alcoholic or non-alcoholic beverages for bar and patrons. Interacting with customers, taking orders and serving snacks and drinks. Assessing bar customers' needs and preferences and making recommendations.", "Bar");

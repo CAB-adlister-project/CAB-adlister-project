@@ -10,7 +10,10 @@
 <body>
 
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
+
+<h1 class="text-center">Your search results</h1>
+<div class="container-fluid">
+    <div class="ads">
     <c:forEach var="job" items="${jobs}">
         <div class="card">
             <div class="card-body">
@@ -21,8 +24,8 @@
                 <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
             </div>
         </div>
-
     </c:forEach>
+</div>
 </div>
 
 </body>
