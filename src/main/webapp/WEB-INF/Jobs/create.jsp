@@ -23,15 +23,6 @@
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
 
-            <h4>Make your restaurant easier to find by selecting categories of what ${sessionScope.user} is hiring for. Make your restaurant stand out!</h4>
-            <div class="btn-group-toggle category" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="foh" checked autocomplete="off">Front of House
-                    <input type="checkbox" id="sous" checked autocomplete="off">Sous Chef
-                    <input type="checkbox" id="chef"checked autocomplete="off">Executive Chef
-                    <input type="checkbox" id="manager" checked autocomplete="off">Manager
-                </label>
-            </div>
 
             <input type="submit" class="btn btn-block btn-primary">
         </form>

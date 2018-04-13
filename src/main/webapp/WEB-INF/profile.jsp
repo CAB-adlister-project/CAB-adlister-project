@@ -11,7 +11,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <jsp:include page="/WEB-INF/partials/editPage.jsp" />
+
     <div class="container-fluid">
 
             <h3>Listings from ${user.rest_name}</h3>
@@ -29,7 +29,7 @@
                             <input hidden type="text" name="id" value="${job.id}">
                             <button>Delete</button>
                         </form>
-                        <a class="btn btn-default btn-xs" href="#" role="button">Edit</a>
+                        <a class="btn btn-default btn-xs" href="/editPost" role="button">Edit</a>
                     </div>
                 </div>
             </c:forEach>
