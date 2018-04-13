@@ -22,8 +22,6 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-
-
         if(request.getParameter("id")!=null){
             int userId = Integer.parseInt(request.getParameter("id"));
             List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID(userId);
