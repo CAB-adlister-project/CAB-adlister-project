@@ -15,17 +15,14 @@
 <div class="container-fluid">
 
     <h1 class="text-center">Listings from ${user.rest_name}</h1>
+    <hr>
 
-    <div class="ads">
         <c:forEach var="job" items="${jobs}">
-            <div class="card">
-                <div class="card-body">
-                    <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
+                    <a  href="/jobs/show?id=${job.id}"><h4 class="text-center">${job.title}</h4></a>
+    <hr>
                 </div>
                 <div>
 
-                </div>
-            </div>
         </c:forEach>
     </div>
 </div>

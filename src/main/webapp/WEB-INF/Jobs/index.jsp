@@ -10,7 +10,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 
-<h1 class="text-center">Here Are all the jobs!</h1>
+<u><h1 class="text-center">Current Job Listings</h1></u>
 <div class="container-fluid">
     <div class="ads">
     <c:forEach var="job" items="${jobs}">

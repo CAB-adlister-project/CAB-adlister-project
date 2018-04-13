@@ -9,11 +9,14 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container-fluid">
-            <h1 class="text-center">${job.rest_name}</h1>
+    <div class="job">
+    <a href="/jobs/alljobs?id=${job.user_id}" class="card-link"><h1 class="text-center">${job.rest_name}</h1></a>
+    <hr>
             <h2 class="text-center">${job.title}</h2>
                 <p class="text-center">${job.description}</p>
         <div>
         </div>
+    </div>
 
 
 
