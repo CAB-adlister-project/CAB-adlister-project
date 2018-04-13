@@ -13,17 +13,18 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <jsp:include page="/WEB-INF/partials/editPage.jsp" />
     <div class="container-fluid">
-        <h1>${sessionScope.user.username} Profile Page!</h1>
+        <%--<h1>${sessionScope.user.username} Profile Page!</h1>--%>
 
             <h3>Listings from ${user.rest_name}</h3>
 
-            <c:forEach var="job" items="${jobs}">
+
+            <c:forEach var="job" items="${otherJobs}">
                 <div class="card">
                     <div class="card-body">
                         <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
                         <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
                         <br>
-                        <a href="/profile?id=${user_id}" class="card-link">More from ${job.rest_name}</a>
+                        <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
                     </div>
                     <div>
                         <form action="/delete" method="post">
