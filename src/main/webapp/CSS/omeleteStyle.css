@@ -5,20 +5,38 @@
     width: 30%;
 }
 
+
+
 #navLogo{
     width: 40px
 }
 
 body {
     font-family: "PT Mono";
+    background: #5D4157;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #A8CABA, #5D4157);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #A8CABA, #5D4157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
+}
+
+a,h5{
+    color: #FFF;
 }
 
 .card{
-    width: 250px;
+    width: 220px;
     height: 150px;
     border-radius:15px;
-    float: left;
+    /*float: left;*/
     border: 1px dashed rgba(0,0,0,.6);
-    padding: 20px;
-    margin: 50px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.ads{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }

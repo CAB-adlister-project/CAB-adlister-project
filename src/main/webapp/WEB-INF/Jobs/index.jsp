@@ -9,18 +9,18 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container-fluid">
-    <h1 class="text-center">Here Are all the jobs!</h1>
 
+<h1 class="text-center">Here Are all the jobs!</h1>
+<div class="container-fluid">
+    <div class="ads">
     <c:forEach var="job" items="${jobs}">
         <div class="card">
-            <%--<div class="card-body">--%>
                 <a  href="/jobs/show?id=${job.id}" class="card-link"><h4>${job.title}</h4></a>
-                <%--<h4>${job.title}</h4>--%>
-                <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
+            <u><h5 class="card-subtitle mb-2">${job.rest_name}</h5></u>
                 <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
             </div>
     </c:forEach>
+    </div>
 </div>
 </body>
 </html>
