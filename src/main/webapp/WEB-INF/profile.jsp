@@ -18,18 +18,15 @@
 
         <div class="ads">
             <c:forEach var="job" items="${jobs}">
-                <div class="card">
-                    <div class="card-body">
+                <div id="delete">
                         <a  href="/jobs/show?id=${job.id}"><h4 class="card-title">${job.title}</h4></a>
-                    </div>
-                    <div>
                         <form action="/delete" method="post">
                             <input hidden type="text" name="id" value="${job.id}">
-                            <button class="btn btn-danger">Delete</button>
+                            <button id="deleteBtn" type="submit"> <span class="glyphicon glyphicon-remove"></span></button>
                         </form>
-                        <%--<a class="btn btn-default btn-xs" href="/editPost" role="button">Edit</a>--%>
-                    </div>
                 </div>
+                </div>
+                <br>
             </c:forEach>
     </div>
     </div>

@@ -37,11 +37,23 @@ a,h5{
     color: #FFF;
 }
 
+
+#delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#deleteBtn{
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+
 .card{
     width: 220px;
     height: 150px;
     border-radius:15px;
-    /*float: left;*/
     border: 1px dashed rgba(0,0,0,.6);
     padding: 10px;
     margin: 20px;
