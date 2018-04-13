@@ -16,9 +16,11 @@
         <div class="card">
             <div class="card-body">
 
+
                 <a  href="/jobs/show?id=${job.id}" class="card-title"><h3 class="card-title">${job.title}</h3></a>
                 <h4 class="card-subtitle mb-2 text-muted">@${job.rest_name}</h4>
                 <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
+
             </div>
         </div>
 

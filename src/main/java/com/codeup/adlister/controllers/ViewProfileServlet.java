@@ -22,6 +22,11 @@ public class ViewProfileServlet extends HttpServlet {
 //            return;
 //        }
 
+
+//        int UserID = Integer.parseInt(request.getSession().getAttribute("user"));
+//        System.out.println(UserID);
+//        User user = DaoFactory.getUsersDao().findByID(UserID);
+
         User user = (User) request.getSession().getAttribute("user");
         request.setAttribute("user", user );
         List<Job> jobs = DaoFactory.getJobsDao().FindJobsByUserID((int)user.getId());
