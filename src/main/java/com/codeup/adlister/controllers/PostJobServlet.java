@@ -28,7 +28,8 @@ public class PostJobServlet extends HttpServlet {
                 (int) user.getId(),
                 request.getParameter("rest_name"),
                 request.getParameter("title"),
-                request.getParameter("description")
+                request.getParameter("description"),
+                request.getParameter("job_cat")
         );
         DaoFactory.getJobsDao().insert(job);
         response.sendRedirect("/jobs");

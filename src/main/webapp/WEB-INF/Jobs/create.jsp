@@ -23,6 +23,22 @@
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
 
+            <div class="form-group">
+                <label for="job_cat">
+                    <select name="job_cat" id="job_cat">
+                        <option value="null">Job Category</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Server">Server</option>
+                        <option value="FOH Manager">FOH Manager</option>
+                        <option value="BOH Manager">BOH Manager</option>
+                        <option value="Cook">Cook</option>
+                        <option value="Dishwasher">Dishwasher</option>
+                        <option value="Baking/Pastry">Baking/Pastry</option>
+                    </select>
+                </label>
+            </div>
+
+
 
             <input type="submit" class="btn btn-block btn-primary">
         </form>

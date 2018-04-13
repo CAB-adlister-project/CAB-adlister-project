@@ -6,20 +6,23 @@ public class Job {
     private String rest_name;
     private String title;
     private String description;
+    private String job_cat;
 
-    public Job(int id,int user_id, String rest_name, String title, String description) {
+    public Job(int id,int user_id, String rest_name, String title, String description, String job_cat) {
         this.id = id;
         this.user_id = user_id;
         this.rest_name = rest_name;
         this.title = title;
         this.description = description;
+        this.job_cat = job_cat;
     }
 
-    public Job(int user_id, String rest_name, String title, String description) {
+    public Job(int user_id, String rest_name, String title, String description, String job_cat) {
         this.user_id = user_id;
         this.rest_name = rest_name;
         this.title = title;
         this.description = description;
+        this.job_cat = job_cat;
     }
 
     public int getId() {
@@ -42,6 +45,8 @@ public class Job {
         return title;
     }
 
+
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -60,5 +65,13 @@ public class Job {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getJob_cat() {
+        return job_cat;
+    }
+
+    public void setJob_cat(String job_cat) {
+        this.job_cat = job_cat;
     }
 }

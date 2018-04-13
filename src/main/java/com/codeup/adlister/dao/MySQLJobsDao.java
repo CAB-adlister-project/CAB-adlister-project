@@ -41,12 +41,12 @@ public class MySQLJobsDao implements Jobs {
     @Override
     public int insert(Job job) {
         try {
-            String insertQuery = "INSERT INTO Jobs(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO Jobs(user_id, title, description, job_cat) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, job.getUser_id());
             stmt.setString(2, job.getTitle());
             stmt.setString(3, job.getDescription());
-
+            stmt.setString(4, job.getJob_cat());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -89,7 +89,8 @@ public class MySQLJobsDao implements Jobs {
                 rs.getInt("j.user_id"),
                 rs.getString("u.rest_name"),
                 rs.getString("j.title"),
-                rs.getString("j.description")
+                rs.getString("j.description"),
+                rs.getString("j.job_cat")
         );
     }
 
@@ -105,11 +106,17 @@ public class MySQLJobsDao implements Jobs {
     public List<Job> search(String searchQuery) {
         PreparedStatement stmt = null;
         try {
-            String sql = "SELECT * FROM jobs j JOIN users u ON u.id = j.user_id WHERE j.title LIKE ? or u.rest_name LIKE ? or u.rest_cat LIKE ?";
+            String sql = "SELECT * FROM jobs j JOIN users u ON u.id = j.user_id WHERE " +
+                    "j.title LIKE ? or u.rest_name LIKE ?" +
+                    " or u.rest_cat LIKE ? or j.job_cat LIKE ? or j.description LIKE ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, "%" + searchQuery + "%");
             stmt.setString(2, "%" + searchQuery + "%");
             stmt.setString(3, "%" + searchQuery + "%");
+            stmt.setString(4, "%" + searchQuery + "%");
+            stmt.setString(5, "%" + searchQuery + "%");
+
+
 
             ResultSet rs = stmt.executeQuery();
             return createJobsFromResults(rs);
