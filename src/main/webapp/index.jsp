@@ -8,7 +8,9 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <div class="landingPage">
     <div class="container text-center">
+        <div class="jumbotron">
 
         <img class="logo" src="CSS/img/omeleteLOGO.png" alt="omelete Logo">
 
@@ -18,6 +20,8 @@
         <form action="/jobs/post" method="GET">
             <input type="submit" class="btn btn-primary btn-block" value="Post Job">
         </form>
+        </div>
+    </div>
     </div>
 </body>
 </html>

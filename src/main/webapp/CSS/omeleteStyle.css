@@ -37,6 +37,21 @@ a,h5{
     color: #FFF;
 }
 
+.landingPage{
+    background-image: url("https://images.pexels.com/photos/6420/metal-easter-eggs-basket.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 100vh;
+}
+
+.jumbotron{
+    margin-top: 8%;
+    color: black;
+    background-color: rgba(255,255,255,.5);
+}
+
 
 #delete{
     display: flex;
