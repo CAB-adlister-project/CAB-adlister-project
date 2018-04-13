@@ -22,7 +22,8 @@
     %>
 
     <div class="container">
-        <h1>Please fill in your information.</h1>
+        <div class="job">
+        <h1 class="text-center">Sign Up!</h1>
         <form action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -44,6 +45,7 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
+
             <div class="form-group">
                 <label for="rest_cat">
                     <select name="rest_cat" id="rest_cat">
@@ -62,6 +64,7 @@
         </form>
 
 
+
         <%--// list through error messages and display the correct one--%>
         <c:if test="${sessionScope.listOfErrors.size() > 0}">
             <div id="errors" class="alert alert-danger">
@@ -73,7 +76,7 @@
                 </ul>
             </div>
         </c:if>
-
+        </div>
     </div>
 </body>
 </html>

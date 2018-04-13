@@ -17,10 +17,9 @@
     <c:forEach var="job" items="${jobs}">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">${job.title}</h4>
-                <h5 class="card-subtitle mb-2 text-muted">${job.rest_name}</h5>
-                <a  href="/jobs/show?id=${job.id}" class="card-link">View Job</a>
-                <br>
+
+                <a  href="/jobs/show?id=${job.id}" class="card-link"><h4 class="card-title">${job.title}</h4></a>
+                <u><h5 class="card-subtitle mb-2">${job.rest_name}</h5></u>
                 <a href="/profile?id=${job.user_id}" class="card-link">More from ${job.rest_name}</a>
             </div>
         </div>
