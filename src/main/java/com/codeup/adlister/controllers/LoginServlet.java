@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
         //sets the checks for register form / add more features
 
         if (username.isEmpty()||password.isEmpty()) {
-            errors.add("You entered an invalid username or password.");
+            errors.add("Username or password must not be empty.");
             inputHasErrors = true;
         }
 
